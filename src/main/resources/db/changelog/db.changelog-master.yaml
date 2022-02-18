@@ -1,0 +1,55 @@
+databaseChangeLog:
+  - logicalFilePath: db/changelog/db.changelog-master.yaml
+  - changeSet:
+      id: 1
+      author: your_liquibase_username
+      changes:
+        - createTable:
+            tableName: distance
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: from_city
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: to_city
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: distance
+                  type: int8
+
+        - createTable:
+            tableName: city
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(50)
+                  constraints:
+                    unique: true
+                    nullable: false
+              - column:
+                  name: latitude
+                  type: float4
+                  constraints:
+                    nullable: false
+              - column:
+                  name: longitude
+                  type: float4
+
