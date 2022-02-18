@@ -1,23 +1,19 @@
 package magenta.datasource.testdistancecalculator.dto;
 
-
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 
 @Getter
 public class RequestCalcDistanceDTO {
 
-    private final String CalcType;
+    private final String calcType;
     private final String fromCity;
     private final String toCity;
 
-    public RequestCalcDistanceDTO(@JsonProperty("CalcType") String CalcType,
+    public RequestCalcDistanceDTO(@JsonProperty("CalcType") String calcType,
                                   @JsonProperty("fromCity") String fromCity,
                                   @JsonProperty("toCity") String toCity) {
-        this.CalcType = CalcType;
+        this.calcType = calcType;
         this.fromCity = fromCity;
         this.toCity = toCity;
     }
