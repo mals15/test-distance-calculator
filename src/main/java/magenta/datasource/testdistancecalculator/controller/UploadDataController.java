@@ -32,7 +32,7 @@ public class UploadDataController {
 //   produces         MediaType.APPLICATION_JSON_VALUE }
     @ResponseBody
     @PostMapping(value = "/upload/xml",  consumes = { MediaType.MULTIPART_FORM_DATA_VALUE})
-    public ResponseEntity<String> uploadXml(@RequestParam MultipartFile file) throws IOException {
+    public ResponseEntity<String> uploadXml(@RequestParam MultipartFile file) {
         try {
             InputStream is = file.getInputStream();
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
